@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, ExternalLink, Cpu, GitBranch, Star } from 'lucide-react'
+import { Github, ExternalLink, ArrowUpRight } from 'lucide-react'
 
 function LLMProjects() {
     const projects = [
@@ -7,15 +7,12 @@ function LLMProjects() {
             title: 'How LLMs Are Made',
             description: 'Comprehensive documentation and implementation of LLM architectures. Building GPT, Deepseek, and Kimi from scratch to understand MoE, MoD, and attention mechanisms.',
             tags: ['PyTorch', 'Transformers', 'MoE', 'Architecture'],
-            stats: { stars: '1.2k', forks: '150' },
             link: 'https://github.com/kunjcr2/how-llms-are-made',
-            featured: true
         },
         {
             title: 'GatorGPT',
             description: '63M parameter transformer model optimized for academic use. Implements Grouped Query Attention (GQA) and RoPE for efficient inference on consumer hardware.',
             tags: ['LLM', 'Inference', 'C++', 'CUDA'],
-            stats: { stars: '850', performance: '1.5 vs 246 loss' },
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/GatorGPT' },
                 { label: 'HuggingFace', url: 'https://huggingface.co/kunjcr2/GatorGPT2' }
@@ -24,79 +21,58 @@ function LLMProjects() {
     ]
 
     return (
-        <section id="llm-projects" className="py-20 relative">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display flex items-center gap-3">
-                            <Cpu className="text-cyan-400" size={32} />
-                            LLM Research & Engineering
-                        </h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mb-6"></div>
-                        <p className="text-lg text-slate-400 max-w-2xl">
-                            Pushing the boundaries of what's possible with small language models and efficient inference architectures.
-                        </p>
-                    </motion.div>
-                </div>
+        <section id="llm-projects" className="py-16 bg-[#0a0a0b]">
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+                {/* Section Header */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mb-16"
+                >
+                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Research</p>
+                    <h2 className="text-3xl font-light text-neutral-100 mb-4">LLM Engineering</h2>
+                    <div className="w-12 h-px bg-neutral-700"></div>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                            className="group relative"
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group"
                         >
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-
-                            <div className="relative h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:bg-slate-800/50 transition-colors">
-                                <div className="flex justify-between items-start mb-6">
-                                    <div className="p-3 bg-cyan-950/30 rounded-lg border border-cyan-400/20 text-cyan-400">
-                                        <GitBranch size={24} />
-                                    </div>
-                                    <div className="flex gap-3">
-                                        {project.stats.stars && (
-                                            <div className="flex items-center gap-1 text-xs font-mono text-slate-400 bg-slate-950/50 px-2 py-1 rounded">
-                                                <Star size={12} className="text-yellow-500" />
-                                                {project.stats.stars}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                            <div className="bg-[#111113] border border-neutral-800/50 rounded-lg p-8 hover:border-neutral-700 transition-colors h-full flex flex-col">
+                                <h3 className="text-xl font-medium text-neutral-100 mb-4 group-hover:text-white transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <p className="text-slate-400 mb-6 leading-relaxed">
+                                <p className="text-neutral-500 mb-6 leading-relaxed text-sm flex-grow">
                                     {project.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-2 mb-8">
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tags.map((tag, i) => (
-                                        <span key={i} className="px-3 py-1 bg-slate-950 text-slate-300 text-xs font-mono border border-slate-800 rounded-full">
+                                        <span key={i} className="px-3 py-1 bg-neutral-900 text-neutral-400 text-xs font-medium border border-neutral-800 rounded">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex gap-4 mt-auto pt-6 border-t border-slate-800">
+                                <div className="flex gap-6 pt-4 border-t border-neutral-800/50">
                                     {project.link ? (
                                         <a
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-cyan-400 transition-colors"
+                                            className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
                                         >
-                                            <Github size={18} />
-                                            View Source
+                                            <Github size={16} />
+                                            Source
+                                            <ArrowUpRight size={14} />
                                         </a>
                                     ) : (
                                         project.links?.map((link, i) => (
@@ -105,10 +81,11 @@ function LLMProjects() {
                                                 href={link.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-sm font-medium text-white hover:text-cyan-400 transition-colors"
+                                                className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
                                             >
-                                                {link.label === 'GitHub' ? <Github size={18} /> : <ExternalLink size={18} />}
+                                                {link.label === 'GitHub' ? <Github size={16} /> : <ExternalLink size={16} />}
                                                 {link.label}
+                                                <ArrowUpRight size={14} />
                                             </a>
                                         ))
                                     )}

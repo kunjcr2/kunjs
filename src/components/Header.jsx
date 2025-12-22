@@ -52,58 +52,45 @@ function Header() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}
         >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`backdrop-blur-md bg-slate-900/70 border border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl transition-all duration-300 ${scrolled ? 'bg-slate-900/90 shadow-cyan-900/20' : ''}`}>
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+                <div className={`backdrop-blur-md bg-[#0a0a0b]/80 border border-neutral-800/50 rounded-none sm:rounded-lg px-6 py-4 flex items-center justify-between transition-all duration-300 ${scrolled ? 'border-neutral-700/50' : ''}`}>
 
-                    <motion.a
+                    <a
                         href="#"
-                        className="text-xl md:text-2xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tight"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className="text-lg font-medium text-neutral-100 tracking-tight hover:text-white transition-colors"
                     >
                         Kunj Shah
-                    </motion.a>
+                    </a>
 
                     {/* Desktop Nav */}
-                    <ul className="hidden md:flex items-center space-x-1">
+                    <ul className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => {
                             const isActive = activeSection === item.href.replace('#', '')
                             return (
                                 <li key={item.href}>
-                                    <motion.a
+                                    <a
                                         href={item.href}
-                                        className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${isActive ? 'text-cyan-400' : 'text-slate-400 hover:text-white'
-                                            }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                        className={`text-sm font-medium tracking-wide transition-colors ${isActive ? 'text-neutral-100' : 'text-neutral-500 hover:text-neutral-300'}`}
                                     >
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeSection"
-                                                className="absolute inset-0 bg-white/5 rounded-full"
-                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
                                         {item.label}
-                                    </motion.a>
+                                    </a>
                                 </li>
                             )
                         })}
                     </ul>
 
                     {/* Social/Contact Icons Desktop */}
-                    <div className="hidden md:flex items-center gap-4 pl-4 border-l border-white/10">
-                        <motion.a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" whileHover={{ y: -2 }}><Github size={20} /></motion.a>
-                        <motion.a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" whileHover={{ y: -2 }}><Linkedin size={20} /></motion.a>
-                        <motion.a href="mailto:kunjcr2@gmail.com" className="text-slate-400 hover:text-white transition-colors" whileHover={{ y: -2 }}><Mail size={20} /></motion.a>
+                    <div className="hidden md:flex items-center gap-5 pl-6 border-l border-neutral-800">
+                        <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-300 transition-colors"><Github size={18} /></a>
+                        <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-300 transition-colors"><Linkedin size={18} /></a>
+                        <a href="mailto:kunjcr2@gmail.com" className="text-neutral-500 hover:text-neutral-300 transition-colors"><Mail size={18} /></a>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden p-2 text-slate-400 hover:text-white"
+                        className="md:hidden p-2 text-neutral-400 hover:text-white"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -114,13 +101,13 @@ function Header() {
                 <AnimatePresence>
                     {mobileMenuOpen && (
                         <motion.div
-                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-4 right-4 mt-2 p-4 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl md:hidden"
+                            className="absolute top-full left-6 right-6 mt-2 p-4 bg-[#0a0a0b]/95 backdrop-blur-xl border border-neutral-800 rounded-lg md:hidden"
                         >
-                            <ul className="space-y-2">
+                            <ul className="space-y-1">
                                 {navItems.map((item) => {
                                     const isActive = activeSection === item.href.replace('#', '')
                                     return (
@@ -131,9 +118,9 @@ function Header() {
                                                     e.preventDefault()
                                                     handleMobileNavClick(item.href)
                                                 }}
-                                                className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${isActive
-                                                    ? 'bg-cyan-500/10 text-cyan-400'
-                                                    : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                                                className={`block px-4 py-3 text-sm font-medium rounded transition-colors ${isActive
+                                                    ? 'text-neutral-100 bg-neutral-800/50'
+                                                    : 'text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800/30'
                                                     }`}
                                             >
                                                 {item.label}
@@ -142,10 +129,10 @@ function Header() {
                                     )
                                 })}
                             </ul>
-                            <div className="flex justify-center gap-6 mt-6 pt-6 border-t border-white/10">
-                                <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white"><Github size={24} /></a>
-                                <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white"><Linkedin size={24} /></a>
-                                <a href="mailto:kunjcr2@gmail.com" className="text-slate-400 hover:text-white"><Mail size={24} /></a>
+                            <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-neutral-800">
+                                <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-300"><Github size={20} /></a>
+                                <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-300"><Linkedin size={20} /></a>
+                                <a href="mailto:kunjcr2@gmail.com" className="text-neutral-500 hover:text-neutral-300"><Mail size={20} /></a>
                             </div>
                         </motion.div>
                     )}

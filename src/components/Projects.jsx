@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, ArrowUpRight } from 'lucide-react'
 
 function Projects() {
     const projects = [
@@ -35,25 +35,21 @@ function Projects() {
     ]
 
     return (
-        <section id="projects" className="py-20 relative">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-16 bg-[#0a0a0b]">
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+                {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="mb-16 text-center md:text-left"
+                    className="mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display flex items-center gap-3">
-                        <Github className="text-cyan-400" size={32} />
-                        Open Source
-                    </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mb-6"></div>
-                    <p className="text-lg text-slate-400 max-w-2xl">
-                        A collection of AI-powered applications and machine learning projects.
-                    </p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Portfolio</p>
+                    <h2 className="text-3xl font-light text-neutral-100 mb-4">Open Source</h2>
+                    <div className="w-12 h-px bg-neutral-700"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -61,50 +57,48 @@ function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/30 hover:shadow-lg transition-all duration-300 flex flex-col group"
+                            className="bg-[#111113] border border-neutral-800/50 rounded-lg overflow-hidden hover:border-neutral-700 transition-colors flex flex-col group"
                         >
-                            {/* Image Placeholder if image fails or just a consistent gradient */}
-                            <div className="relative h-48 overflow-hidden bg-slate-800 border-b border-slate-800">
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+                            {/* Image */}
+                            <div className="relative h-40 overflow-hidden bg-neutral-900 border-b border-neutral-800/50">
                                 <img
                                     src={project.image}
                                     alt={`${project.title} thumbnail`}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
                                     onError={(e) => {
                                         e.target.style.display = 'none';
-                                        e.target.parentElement.classList.add('bg-gradient-to-br', 'from-cyan-900', 'to-slate-800');
                                     }}
                                 />
                             </div>
 
                             <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-white mb-3 font-display group-hover:text-cyan-400 transition-colors">
+                                <h3 className="text-lg font-medium text-neutral-100 mb-3 group-hover:text-white transition-colors">
                                     {project.title}
                                 </h3>
 
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag, i) => (
-                                        <span key={i} className="px-2.5 py-1 bg-slate-950 border border-slate-800 text-slate-400 text-xs font-mono rounded-md">
+                                        <span key={i} className="px-2 py-1 bg-neutral-900 border border-neutral-800 text-neutral-500 text-xs font-medium rounded">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <p className="text-slate-400 leading-relaxed mb-6 text-sm flex-grow">
+                                <p className="text-neutral-500 leading-relaxed text-sm flex-grow mb-6">
                                     {project.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-4 mt-auto pt-4 border-t border-slate-800">
+                                <div className="flex flex-wrap gap-4 pt-4 border-t border-neutral-800/50">
                                     {project.links.map((link, i) => (
                                         <a
                                             key={i}
                                             href={link.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 text-sm font-medium transition-colors"
+                                            className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-neutral-200 text-sm transition-colors"
                                         >
                                             {link.label}
-                                            <ExternalLink size={14} />
+                                            <ArrowUpRight size={14} />
                                         </a>
                                     ))}
                                 </div>
@@ -113,15 +107,16 @@ function Projects() {
                     ))}
                 </div>
 
-                <div className="text-center mt-16">
+                <div className="mt-16">
                     <a
                         href="https://github.com/kunjcr2/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white border border-slate-700 text-sm font-medium rounded-lg hover:bg-slate-800 transition-all hover:border-cyan-500/50"
+                        className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-200 text-sm font-medium transition-colors"
                     >
-                        <Github size={20} />
-                        View All Projects on GitHub
+                        <Github size={18} />
+                        View all on GitHub
+                        <ArrowUpRight size={14} />
                     </a>
                 </div>
             </div>

@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
+    --background: 10 10 11;
+    --foreground: 245 245 245;
   }
-  
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -15,37 +15,38 @@
   }
 
   body {
-    @apply bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+    @apply bg-[#0a0a0b] text-neutral-100 font-sans antialiased selection:bg-neutral-700/50 selection:text-white;
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-950;
+    background: #0a0a0b;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-800 rounded-full border-2 border-slate-950 hover:bg-slate-700 transition-colors;
+    background: #262626;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #404040;
   }
 }
 
 @layer utilities {
-    .glass-panel {
-        @apply bg-slate-900/50 backdrop-blur-xl border border-white/10 shadow-xl;
-    }
-    
-    .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500;
-    }
+  .glass-panel {
+    @apply bg-neutral-900/50 backdrop-blur-xl border border-neutral-800/50 shadow-xl;
+  }
 
-    .text-gradient-purple {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500;
-    }
-    
-    .glow-cyan {
-        box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);
-    }
+  .section-heading {
+    @apply text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-8;
+  }
+
+  .card-professional {
+    @apply bg-[#111113] border border-neutral-800/50 rounded-lg p-6 hover:border-neutral-700/50 transition-colors;
+  }
 }
