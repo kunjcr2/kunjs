@@ -30,7 +30,7 @@ function BackToTop() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 z-50 bg-slate-900/80 backdrop-blur border border-cyan-500/30 text-cyan-400 p-3 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-500 hover:text-white transition-all duration-300 group"
+                    className="fixed bottom-8 right-8 z-50 bg-gray-900 backdrop-blur border border-gray-500/30 text-gray-400 p-3 rounded-full shadow-gray-500 hover:bg-gray-800 hover:text-white transition-all duration-300 group"
                     aria-label="Back to top"
                 >
                     <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />

@@ -77,11 +77,13 @@ function Hero() {
                             transition={{ duration: 0.6, delay: 0.5 }}
                         >
                             <a
-                                href="#llm-projects"
+                                href="/resumes/Kunj_Shah_Resume.pdf"
+                                target="_blank"
+                                // rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 text-neutral-100 text-sm font-medium tracking-wide hover:text-white transition-colors group"
                             >
-                                View Work
-                                <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                                View Resume
+                                <ArrowDown className="w-4 h-4 rotate-[-90deg] group-hover:translate-x-0.5 transition-transform" />
                             </a>
 
                             <span className="text-neutral-700">|</span>
@@ -91,7 +93,7 @@ function Hero() {
                                 className="inline-flex items-center gap-2 text-neutral-500 text-sm font-medium tracking-wide hover:text-neutral-300 transition-colors group"
                             >
                                 <Download className="w-4 h-4" />
-                                Resume
+                                Get Resume
                             </button>
                         </motion.div>
                     </motion.div>
@@ -99,14 +101,14 @@ function Hero() {
             </div>
 
             {/* Scroll indicator */}
-            <motion.div
+            {/* <motion.div
                 className="absolute bottom-12 left-1/2 -translate-x-1/2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
             >
                 <div className="w-px h-16 bg-gradient-to-b from-neutral-600 to-transparent"></div>
-            </motion.div>
+            </motion.div> */}
         </section>
     )
 }
