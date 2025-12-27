@@ -8,8 +8,12 @@ function Experience() {
             company: 'Routes Technologies',
             location: 'Remote (Texas)',
             period: 'Oct 2025 — Jan 2026',
-            description: '',
-            achievements: [],
+            description: 'Training and managing AI models with the team using Python, PyTorch, and Transformers, with experiment tracking via Weights & Biases and model serving through Azure ML Studio endpoints.',
+            achievements: [
+                'Built a Flask-based Instagram Graph API integration with OAuth and automated hashtag/recipe detection using PyDantic',
+                'Created a production-ready web crawler using Scrapy and BeautifulSoup4 for ethical company data extraction'
+            ],
+            technologies: ['Python', 'PyTorch', 'Transformers', 'Azure ML', 'wandb', 'Flask', 'Scrapy', 'BeautifulSoup4'],
             link: 'https://www.linkedin.com/company/routestechnologies/posts/?feedView=all',
             linkLabel: 'LinkedIn',
         },
@@ -18,11 +22,14 @@ function Experience() {
             company: 'Dreamable Inc.',
             location: '',
             period: 'June 2024 — August 2025',
-            description: 'Collaborating on the development of AI agent solutions that enable developers to build intelligent LLM workflows 2–3x faster using low-code and no-code tools, focusing on agent orchestration, prompt chaining, and modular tool integration.',
+            description: 'Contributed to fine-tuning a Qwen-2.5-7B model on Lambda Cloud using LoRA for cost-efficient training, hosted on GCP Cloud Run.',
             achievements: [
-                'n8n outreach agent adopted by 14 interns',
-                'lead‑quality ↑2.3×'
+                'Led dataset curation using pandas, numpy, and datasets library for Q&A tasks',
+                'Achieved very low validation loss through hyperparameter tuning, tracked with wandb',
+                'Developed an AI-powered Outreach Agent using Langchain, Exa.ai, and OpenAI API to automate messaging workflows',
+                'n8n outreach agent adopted by 14 interns, lead quality ↑2.3×'
             ],
+            technologies: ['Hugging Face', 'PyTorch', 'LoRA', 'GCP Cloud Run', 'Lambda', 'Langchain', 'OpenAI', 'wandb'],
             link: '',
             linkLabel: '',
         },
@@ -35,6 +42,7 @@ function Experience() {
             achievements: [
                 'Bringing AI to students on campus of SFSU'
             ],
+            technologies: [],
             link: 'https://ai-at-sfsu.vercel.app/home',
             linkLabel: 'Website',
         }
@@ -91,6 +99,16 @@ function Experience() {
                                             </li>
                                         ))}
                                     </ul>
+                                )}
+
+                                {exp.technologies && exp.technologies.length > 0 && (
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {exp.technologies.map((tech, i) => (
+                                            <span key={i} className="px-2 py-1 bg-neutral-900 border border-neutral-800 text-neutral-500 text-xs font-medium rounded">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
                                 )}
 
                                 {exp.link && (
