@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
-import LLMProjects from './components/LLMProjects'
+import Models from './components/Models'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
@@ -71,7 +71,7 @@ function App() {
             <Header />
             <Hero />
             <main className="space-y-24 pb-24">
-                <LLMProjects />
+                <Models />
                 <Experience />
                 <Projects />
                 <Skills />

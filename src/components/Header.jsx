@@ -18,7 +18,7 @@ function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     useEffect(() => {
-        const sectionIds = ['llm-projects', 'experience', 'projects', 'skills', 'contact']
+        const sectionIds = ['models', 'experience', 'projects', 'skills', 'contact']
 
         const handleScroll = () => {
             setScrolled(window.scrollY > 50)
@@ -40,7 +40,7 @@ function Header() {
     }, [])
 
     const navItems = [
-        { href: '#llm-projects', label: 'Research' },
+        { href: '#models', label: 'Models' },
         { href: '#experience', label: 'Experience' },
         { href: '#projects', label: 'Projects' },
         { href: '#skills', label: 'Skills' },

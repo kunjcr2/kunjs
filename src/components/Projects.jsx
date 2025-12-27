@@ -11,26 +11,6 @@ function Projects() {
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/Max' }
             ]
-        },
-        {
-            title: 'Llama-3.2-3b Finetuned',
-            image: '/assets/llama.png',
-            tags: ['~300k QA Pairs', 'LoRA', 'vLLM', 'Docker'],
-            description: 'An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset. This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated.',
-            links: [
-                { label: 'Hugging Face', url: 'https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes' },
-                { label: 'GitHub', url: 'https://github.com/kunjcr2/llama-3.2-3b-openhermes' }
-            ]
-        },
-        {
-            title: 'Qwen2.5-0.5B SFT + DPO',
-            image: '/assets/qwen_image.png',
-            tags: ['85M tokens', '1.48 val loss', '66% reward acc'],
-            description: 'A two-stage pipeline where the model was first trained on 85M tokens with supervised fine-tuning, and then optimized with Direct Preference Optimization to achieve 66% reward accuracy.',
-            links: [
-                { label: 'Hugging Face', url: 'https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo' },
-                { label: 'GitHub', url: 'https://github.com/kunjcr2/how-llms-are-made/blob/main/docs/ml-and-dl/Reasoning Models/RLHF/DirectPreferenceOptimization.py' }
-            ]
         }
     ]
 
