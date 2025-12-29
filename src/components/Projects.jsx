@@ -11,6 +11,15 @@ function Projects() {
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/Max' }
             ]
+        },
+        {
+            title: 'Kanting - Video RAG System',
+            image: '/assets/kanting_thumb.png',
+            tags: ['Semantic Search', 'Whisper ASR', 'Claude AI'],
+            description: 'Built a video RAG (Retrieval-Augmented Generation) system that indexes YouTube videos using Whisper for transcription, stores embeddings with Sentence-Transformers, and enables semantic search with timestamped clip extraction powered by Claude.',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/kunjcr2/kanting' }
+            ]
         }
     ]
 
