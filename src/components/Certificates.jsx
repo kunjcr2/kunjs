@@ -6,22 +6,25 @@ function Certificates() {
     const [isExpanded, setIsExpanded] = useState(false)
 
     const certificates = [
-        'Deep Learning Specialization - Coursera (DeepLearning.AI)',
-        'Machine Learning Engineering for Production (MLOps) Specialization - Coursera (DeepLearning.AI)',
-        'Natural Language Processing Specialization - Coursera (DeepLearning.AI)',
-        'TensorFlow: Data and Deployment Specialization - Coursera (DeepLearning.AI)',
-        'Structuring Machine Learning Projects - Coursera (DeepLearning.AI)',
-        'Convolutional Neural Networks - Coursera (DeepLearning.AI)',
-        'Sequence Models - Coursera (DeepLearning.AI)',
-        'Improving Deep Neural Networks - Coursera (DeepLearning.AI)',
-        'Neural Networks and Deep Learning - Coursera (DeepLearning.AI)',
-        'AWS Certified Cloud Practitioner - Amazon Web Services',
-        'Google IT Automation with Python - Coursera (Google)',
-        'Google Project Management Specialization - Coursera (Google)',
-        'IBM AI Engineering Professional Certificate - Coursera (IBM)',
-        'IBM Machine Learning Professional Certificate - Coursera (IBM)',
-        'IBM Data Science Professional Certificate - Coursera (IBM)',
-        'IBM Data Analyst Professional Certificate - Coursera (IBM)',
+        // AI & LLM (high-signal)
+        'AI Memory: Exploring and Building LLM Memory Systems — LinkedIn (Jul 2025)',
+        'Automate Development Tasks with OpenAI\'s Codex — LinkedIn (Jul 2025)',
+        'Fine-Tuning for LLMs: From Beginner to Advanced — LinkedIn (Jul 2025)',
+        'Model Context Protocol (MCP): Hands-On with Agentic AI — LinkedIn (Jul 2025)',
+        'Introduction to Generative AI — Google Cloud Education (Jan 2024)',
+        // Programming / SWE Foundations
+        'Crash Course on Python — Google Career Certificates (Jan 2024)',
+        'Introduction to Programming Using Python — University of Michigan (Apr 2023)',
+        'Python — University of Michigan',
+        // Web / General
+        'Introduction to Web Development — UC Davis (Jan 2024)',
+        // Math / Theory
+        'Introduction to Complex Analysis — Wesleyan University (Jul 2022)',
+        'Understanding Einstein: The Special Theory of Relativity — Stanford University (Mar 2022)',
+        'Calculus through Data & Modelling: Integration Applications — Johns Hopkins University',
+        'Calculus through Data & Modelling: Series and Integration — Johns Hopkins University',
+        'Calculus through Data & Modelling: Techniques of Integration — Johns Hopkins University',
+        'Calculus through Data & Modelling: Vector Calculus — Johns Hopkins University',
     ]
 
     return (

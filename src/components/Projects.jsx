@@ -20,6 +20,15 @@ function Projects() {
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/kanting' }
             ]
+        },
+        {
+            title: 'theHelper - AI Research Assistant',
+            image: '/assets/thehelper-thumb.jpg',
+            tags: ['RAG', 'FAISS', 'BART', 'OpenAI GPT-4o-mini', 'Streamlit'],
+            description: 'Built a hybrid RAG system for PDF analysis using local BART for free summarization, FAISS for fast vector search, and OpenAI GPT-4o-mini for intelligent Q&A. Features SentenceTransformers embeddings and a Streamlit web interface for seamless document querying.',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/kunjcr2/theHelper' }
+            ]
         }
     ]
 
