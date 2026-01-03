@@ -4,10 +4,10 @@ import { ExternalLink, Cpu, ArrowUpRight } from 'lucide-react'
 function Models() {
     const models = [
         {
-            name: 'MedAssist-GPT-401M',
-            description: 'A 401M parameter medical-domain transformer pretrained on PubMed abstracts using RoPE, GQA, and SwiGLU for research-only text generation.',
-            huggingface: 'https://huggingface.co/kunjcr2/MedAssist-GPT-401M',
-            parameters: '401M'
+            name: 'MedAssistGPT',
+            description: 'A 303M and a 401M parameter medical-domain transformer pretrained on PubMed abstracts using RoPE, GQA, and SwiGLU for research-only text generation.',
+            huggingface: 'https://huggingface.co/kunjcr2/MedAssistGPT',
+            parameters: '303M & 401M'
         },
         {
             name: 'Qwen2.5-0.5B SFT+DPO',
