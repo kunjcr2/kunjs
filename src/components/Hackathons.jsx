@@ -7,16 +7,16 @@ function Hackathons() {
 
     const hackathons = [
         {
+            name: 'CalHacks 12.0',
+            where: 'Palace of Fine Arts, SF',
+            when: 'October 2025',
+            project: 'Kanting',
+        },
+        {
             name: 'MCP AWS Agentic Challenge',
             where: 'AWS Builder Loft, SF',
             when: 'July 2025',
             project: 'Nango Automation',
-        },
-        {
-            name: 'Cal Hacks 11.0',
-            where: 'San Francisco, CA',
-            when: 'October 2024',
-            project: 'Workout Web App',
         },
         {
             name: 'SacHacks',
@@ -31,10 +31,10 @@ function Hackathons() {
             project: 'Web Detective',
         },
         {
-            name: 'CalHacks 12.0',
-            where: 'Palace of Fine Arts, SF',
-            when: 'October 2025',
-            project: 'Kantin AI',
+            name: 'Cal Hacks 11.0',
+            where: 'San Francisco, CA',
+            when: 'October 2024',
+            project: 'Workout Web App',
         }
     ]
 

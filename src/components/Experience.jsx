@@ -4,39 +4,38 @@ import { ArrowUpRight } from 'lucide-react'
 function Experience() {
     const experiences = [
         {
-            title: 'AI Engineering Intern',
+            title: 'ML Engineering Intern',
             company: 'Routes Technologies',
-            location: 'Remote (Texas)',
-            period: 'Oct 2025 — Jan 2026',
-            description: 'Training and managing AI models with the team using Python, PyTorch, and Transformers, with experiment tracking via Weights & Biases and model serving through Azure ML Studio endpoints.',
+            location: 'Remote, TX',
+            period: 'Oct 2025 — Present',
+            description: 'Collaborating with the team to train and manage AI models using Python, PyTorch, and Transformers — with model tracking via Weights & Biases and seamless deployment through Azure ML Studio endpoints.',
             achievements: [
-                'Built a Flask-based Instagram Graph API integration with OAuth and automated hashtag/recipe detection using PyDantic',
-                'Created a production-ready web crawler using Scrapy and BeautifulSoup4 for ethical company data extraction'
+                'Engineered a fully functional Web Crawler with Scrapy and BeautifulSoup4, enabling ethical extraction of company-relevant data from open web sources',
+                'Developed a Flask-based Instagram Graph API integration leveraging Python and PyDantic, featuring OAuth Authentication and intelligent hashtag/recipe detection'
             ],
             technologies: ['Python', 'PyTorch', 'Transformers', 'Azure ML', 'wandb', 'Flask', 'Scrapy', 'BeautifulSoup4'],
             link: 'https://www.linkedin.com/company/routestechnologies/posts/?feedView=all',
             linkLabel: 'LinkedIn',
         },
         {
-            title: 'AI Agent Intern',
+            title: 'AI Engineer Intern',
             company: 'Dreamable Inc.',
-            location: '',
-            period: 'June 2024 — August 2025',
-            description: 'Contributed to fine-tuning a Qwen-2.5-7B model on Lambda Cloud using LoRA for cost-efficient training, hosted on GCP Cloud Run.',
+            location: 'San Francisco, CA',
+            period: 'May 2025 — Aug 2025',
+            description: 'Contributed to fine-tuning Qwen-2.5-7B using Hugging Face, PyTorch, and LoRA on Lambda Cloud for cost and memory efficient training — deployed on GCP Cloud Run.',
             achievements: [
-                'Led dataset curation using pandas, numpy, and datasets library for Q&A tasks',
-                'Achieved very low validation loss through hyperparameter tuning, tracked with wandb',
-                'Developed an AI-powered Outreach Agent using Langchain, Exa.ai, and OpenAI API to automate messaging workflows',
-                'n8n outreach agent adopted by 14 interns, lead quality ↑2.3×'
+                'Spearheaded dataset curation pipeline using pandas, NumPy, and datasets library for Q&A task optimization',
+                'Tuned model hyperparameters to achieve remarkably low validation loss, with full experiment tracking via Weights & Biases',
+                'Built an AI-powered Outreach Agent using Langchain, Exa.ai, and OpenAI API to automate and scale messaging workflows'
             ],
             technologies: ['Hugging Face', 'PyTorch', 'LoRA', 'GCP Cloud Run', 'Lambda', 'Langchain', 'OpenAI', 'wandb'],
-            link: '',
-            linkLabel: '',
+            link: 'https://www.linkedin.com/company/dreamable-inc/posts/?feedView=all',
+            linkLabel: 'LinkedIn',
         },
         {
             title: 'Vice President of AI Club',
             company: 'SF State',
-            location: '',
+            location: 'San Francisco',
             period: 'June 2024 — August 2025',
             description: 'Leading initiatives to bring AI education and resources to students on campus, organizing workshops, talks, and hands-on projects.',
             achievements: [
