@@ -20,6 +20,12 @@ function Models() {
             description: 'A 3B parameter Llama-3.2 model adapted with QLoRA on the OpenHermes dataset for improved multi-domain instruction following.',
             huggingface: 'https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes',
             parameters: '3B'
+        },
+        {
+            name: 'StableLM 1.6B SFT+GRPO',
+            description: 'A 1.6B parameter StableLM model fine-tuned with LoRA-based SFT on UltraChat 200K and aligned with GRPO using PKU-SafeRLHF for safety.',
+            huggingface: 'https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned',
+            parameters: '1.6B'
         }
     ]
 

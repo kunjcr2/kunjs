@@ -17,6 +17,16 @@ function LLMProjects() {
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/GatorGPT' },
                 { label: 'HuggingFace', url: 'https://huggingface.co/kunjcr2/GatorGPT2' }
             ]
+        },
+        {
+            title: 'End-to-End LLM Post-Pretraining Pipeline',
+            description: 'Complete production-style pipeline for LLM post-pretraining covering Supervised Fine-Tuning (SFT) with LoRA and GRPO alignment. Demonstrates the full workflow from data preprocessing to model alignment using StableLM 1.6B.',
+            tags: ['SFT', 'GRPO', 'LoRA', 'TRL', 'PEFT'],
+            links: [
+                { label: 'GitHub', url: 'https://github.com/kunjcr2/end-to-end-post-pretraining' },
+                { label: 'HuggingFace', url: 'https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned' },
+                { label: 'WandB', url: 'https://wandb.ai/kunjcr2-dreamable/huggingface/runs/qds5kqi2' }
+            ]
         }
     ]
 
