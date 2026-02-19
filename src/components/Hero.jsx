@@ -4,8 +4,8 @@ import { ArrowDown, Download } from 'lucide-react'
 function Hero() {
     const handleResumeDownload = () => {
         const link = document.createElement('a')
-        link.href = '/resumes/Kunj_Shah_Resume.pdf'
-        link.download = 'Kunj_Shah_Resume.pdf'
+        link.href = '/resumes/Kunj P. Shah.pdf'
+        link.download = 'Kunj P. Shah.pdf'
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
@@ -77,7 +77,7 @@ function Hero() {
                             transition={{ duration: 0.6, delay: 0.5 }}
                         >
                             <a
-                                href="/resumes/Kunj_Shah_Resume.pdf"
+                                href="/resumes/Kunj P. Shah.pdf"
                                 target="_blank"
                                 // rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 text-neutral-100 text-sm font-medium tracking-wide hover:text-white transition-colors group"
