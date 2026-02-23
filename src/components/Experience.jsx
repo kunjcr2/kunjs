@@ -31,19 +31,6 @@ function Experience() {
             technologies: ['Hugging Face', 'PyTorch', 'LoRA', 'GCP Cloud Run', 'Lambda', 'Langchain', 'OpenAI', 'wandb'],
             link: 'https://www.linkedin.com/company/dreamable-inc/posts/?feedView=all',
             linkLabel: 'LinkedIn',
-        },
-        {
-            title: 'Vice President of AI Club',
-            company: 'SF State',
-            location: 'San Francisco',
-            period: 'June 2024 — August 2025',
-            description: 'Leading initiatives to bring AI education and resources to students on campus, organizing workshops, talks, and hands-on projects.',
-            achievements: [
-                'Bringing AI to students on campus of SFSU'
-            ],
-            technologies: [],
-            link: 'https://ai-at-sfsu.vercel.app/home',
-            linkLabel: 'Website',
         }
     ]
 

@@ -18,7 +18,7 @@ function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     useEffect(() => {
-        const sectionIds = ['models', 'experience', 'projects', 'skills', 'contact']
+        const sectionIds = ['models', 'experience', 'education', 'projects', 'skills', 'contact']
 
         const handleScroll = () => {
             setScrolled(window.scrollY > 50)
@@ -42,6 +42,7 @@ function Header() {
     const navItems = [
         { href: '#models', label: 'Models' },
         { href: '#experience', label: 'Experience' },
+        { href: '#education', label: 'Education' },
         { href: '#projects', label: 'Projects' },
         { href: '#skills', label: 'Skills' },
         { href: '#contact', label: 'Contact' },
