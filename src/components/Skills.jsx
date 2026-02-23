@@ -3,38 +3,49 @@ import { motion } from 'framer-motion'
 function Skills() {
     const skillCategories = [
         {
-            title: 'Languages',
-            skills: ['Python', 'JavaScript', 'Java', 'C++', 'HTML/CSS', 'SQL']
-        },
-        {
-            title: 'AI & Frameworks',
+            title: 'Programming',
             skills: [
-                'LangChain', 'LangFlow', 'n8n', 'RAG Pipelines', 'OpenAI API',
-                'Hugging Face', 'MCP Servers', 'Vector DBs', 'Prompt Engineering'
+                'Python', 'SQL', 'Java', 'JavaScript', 'C++', 'HTML5/CSS', 'TailwindCSS',
+                'Bash/Shell Scripting', 'R', 'Git', 'Jupyter Notebooks', 'Linux/Unix',
+                'Object-Oriented Programming', 'Data Structures & Algorithms'
             ]
         },
         {
-            title: 'ML & Deep Learning',
+            title: 'Machine Learning & NLP',
             skills: [
-                'PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'OpenCV', 'Pandas', 'NumPy',
-                'NLP', 'Computer Vision', 'LoRA', 'Weights & Biases',
-                'Reinforcement Learning', 'DPO', 'PPO'
+                'Supervised & Unsupervised Learning', 'PyTorch', 'TensorFlow', 'Scikit-learn',
+                'Azure ML', 'Weights & Biases', 'Pandas', 'NumPy', 'Neural Networks',
+                'Deep Learning', 'Reinforcement Learning', 'LangChain', 'n8n',
+                'Artificial Intelligence', 'Data Analysis', 'OpenCV', 'Hugging Face',
+                'FAISS', 'Sentence Transformers', 'NLP', 'Computer Vision',
+                'Whisper', 'BART', 'Matplotlib/Seaborn', 'Transfer Learning',
+                'Tokenization', 'Attention Mechanisms', 'Embeddings',
+                'Hyperparameter Tuning', 'Data Preprocessing', 'Feature Engineering',
+                'Gradient Descent / Backpropagation', 'SciPy'
             ]
         },
         {
-            title: 'MLOps & Deployment',
+            title: 'LLM',
             skills: [
-                'Docker', 'vLLM Serving', 'Hugging Face Hub', 'Model Deployment',
-                'GPU Optimization', 'Distributed Training', 'Vertex AI', 'Git'
+                'Transformers', 'Large Language Models', 'Fine Tuning', 'Model Training',
+                'Model Inference', 'Model Alignment', 'Model Tracking & Experimenting',
+                'Model Evaluation', 'vLLM', 'LoRA/PEFT', 'RLHF', 'TRPO', 'PPO', 'DPO',
+                'GRPO', 'RAG Pipelines', 'OpenAI API', 'Prompt Engineering',
+                'Hugging Face Hub', 'TRL', 'Quantization', 'Knowledge Distillation',
+                'Few-Shot / Zero-Shot Learning', 'Semantic Search', 'Vector Databases',
+                'Chain-of-Thought Prompting', 'Anthropic API'
             ]
         },
         {
-            title: 'Web Development',
-            skills: ['Node.js', 'React.js', 'Flask', 'TailwindCSS', 'Express.js']
-        },
-        {
-            title: 'Databases & Tools',
-            skills: ['MongoDB', 'MySQL', 'Vertex AI', 'Git', 'Docker']
+            title: 'Backend Systems',
+            skills: [
+                'RESTful API', 'FastAPI', 'Flask', 'Streamlit', 'PostgreSQL', 'MongoDB',
+                'MySQL', 'ORMs', 'Pydantic', 'Docker', 'Microsoft Azure Ecosystem',
+                'Azure ML Studio', 'Azure Blob Storage', 'Azure SQL', 'GCP', 'Scrapy',
+                'BeautifulSoup', 'OAuth', 'CI/CD', 'Nginx', 'Agile',
+                'Google Colab', 'ngrok', 'Postman', 'Logging & Monitoring',
+                'Microsoft Office Suite'
+            ]
         }
     ]
 
@@ -53,7 +64,7 @@ function Skills() {
                     <div className="w-12 h-px bg-neutral-700"></div>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
                     {skillCategories.map((category, index) => (
                         <motion.div
                             key={index}
