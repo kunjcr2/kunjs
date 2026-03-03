@@ -24,8 +24,12 @@ function Projects() {
         {
             title: 'theHelper - AI Research Assistant',
             image: '/assets/thehelper-thumb.jpg',
-            tags: ['RAG', 'FAISS', 'BART', 'OpenAI GPT-4o-mini', 'Streamlit'],
-            description: 'Built a hybrid RAG system for PDF analysis using local BART for free summarization, FAISS for fast vector search, and OpenAI GPT-4o-mini for intelligent Q&A. Features SentenceTransformers embeddings and a Streamlit web interface for seamless document querying.',
+            tags: ['FastAPI', 'FAISS', 'LangChain', 'Cross-Encoder Reranking', 'OpenAI', 'GitHub Actions'],
+            description: 'Production-grade PDF RAG service backed by a persistent local FAISS vector index, LangChain recursive chunking, and cross-encoder reranking — returns structured source references (filename, page, score) alongside every generated answer.',
+            achievements: [
+                'Implemented a local-first observability layer tracing every query to daily JSONL files and writing per-request artifacts (prompt, context, response) to disk — full reproducibility with zero external dependencies',
+                'Designed an automated eval suite measuring retrieval quality (hit-rate@k, recall@k) and generation quality (faithfulness, relevance via LLM-judge), gated into a GitHub Actions CI pipeline that fails on quality regressions'
+            ],
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/theHelper' }
             ]
@@ -82,9 +86,22 @@ function Projects() {
                                     ))}
                                 </div>
 
-                                <p className="text-neutral-500 leading-relaxed text-sm flex-grow mb-6">
+                                <p className="text-neutral-500 leading-relaxed text-sm mb-4">
                                     {project.description}
                                 </p>
+
+                                {project.achievements && project.achievements.length > 0 && (
+                                    <ul className="space-y-1 mb-4 flex-grow">
+                                        {project.achievements.map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2 text-sm text-neutral-400">
+                                                <span className="text-neutral-600 mt-1">—</span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {!project.achievements && <div className="flex-grow" />}
 
                                 <div className="flex flex-wrap gap-4 pt-4 border-t border-neutral-800/50">
                                     {project.links.map((link, i) => (
