@@ -4,7 +4,18 @@ import { ArrowUpRight } from 'lucide-react'
 function Experience() {
     const experiences = [
         {
-            title: 'ML Engineering Intern',
+            title: 'Deep Learning Intern — LLM Research & Model Safety',
+            company: 'A10 Networks',
+            location: 'San Jose, CA',
+            period: 'May 2026 — Aug 2026',
+            description: 'Incoming intern focusing on Large Language Model (LLM) research, with an emphasis on safety, interpretability, and alignment.',
+            achievements: [],
+            technologies: ['PyTorch', 'Transformers', 'LLMs', 'Model Safety', 'Alignment'],
+            link: 'https://www.a10networks.com/',
+            linkLabel: 'Company Website',
+        },
+        {
+            title: 'AI Engineering Intern',
             company: 'Routes Technologies',
             location: 'Remote, TX',
             period: 'Oct 2025 — Present',
@@ -18,7 +29,7 @@ function Experience() {
             linkLabel: 'LinkedIn',
         },
         {
-            title: 'AI Engineer Intern',
+            title: 'AI Engineering Intern',
             company: 'Dreamable Inc.',
             location: 'San Francisco, CA',
             period: 'May 2025 — Aug 2025',

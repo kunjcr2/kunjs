@@ -37,7 +37,7 @@ function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            LLM Engineer
+                            LLM Engineer | Incoming Deep Learning Intern @ A10 Networks
                         </motion.p>
 
                         {/* Main Heading */}
