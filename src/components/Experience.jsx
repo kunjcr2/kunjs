@@ -22,11 +22,12 @@ function Experience() {
             description: 'Collaborating with the team to train and manage AI models using Python, PyTorch, and Transformers — with model tracking via Weights & Biases and seamless deployment through Azure ML Studio endpoints.',
             achievements: [
                 'Engineered a fully functional Web Crawler with Scrapy and BeautifulSoup4, enabling ethical extraction of company-relevant data from open web sources',
-                'Developed a Flask-based Instagram Graph API integration leveraging Python and PyDantic, featuring OAuth Authentication and intelligent hashtag/recipe detection'
+                'Developed a Flask-based Instagram Graph API integration leveraging Python and PyDantic, featuring OAuth Authentication and intelligent hashtag/recipe detection',
+                'Deployed AI model endpoints via Azure ML Studio managed endpoints, configuring load balancing and auto-scaling for production-grade reliability'
             ],
             technologies: ['Python', 'PyTorch', 'Transformers', 'Azure ML', 'wandb', 'Flask', 'Scrapy', 'BeautifulSoup4'],
-            link: 'https://www.linkedin.com/company/routestechnologies/posts/?feedView=all',
-            linkLabel: 'LinkedIn',
+            link: 'https://routestechnologies.com/landing',
+            linkLabel: 'Website',
         },
         {
             title: 'AI Engineering Intern',
