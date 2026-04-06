@@ -3,15 +3,15 @@ import { Github, ExternalLink, ArrowUpRight } from 'lucide-react'
 
 function Projects() {
     const projects = [
-        {
-            title: 'Max - AI Voice Assistant',
-            image: '/assets/max_thumb.jpg',
-            tags: ['90% voice accuracy', '8 tools', 'Langchain/OpenAI'],
-            description: 'Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and SpeechRecognition to automate tasks like web search, YouTube streaming, and emailing.',
-            links: [
-                { label: 'GitHub', url: 'https://github.com/kunjcr2/Max' }
-            ]
-        },
+        // {
+        //     title: 'Max - AI Voice Assistant',
+        //     image: '/assets/max_thumb.jpg',
+        //     tags: ['90% voice accuracy', '8 tools', 'Langchain/OpenAI'],
+        //     description: 'Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and SpeechRecognition to automate tasks like web search, YouTube streaming, and emailing.',
+        //     links: [
+        //         { label: 'GitHub', url: 'https://github.com/kunjcr2/Max' }
+        //     ]
+        // },
         {
             title: 'Kanting - Video RAG System',
             image: '/assets/kanting_thumb.png',
@@ -33,7 +33,21 @@ function Projects() {
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/theHelper' }
             ]
+        },
+        {
+            title: 'LLM Firewall for Agentic Tool-Calling',
+            image: '/assets/llm-firewall.png',
+            tags: ['BERT', 'GPT-2', 'LoRA', 'Prompt Injection', 'Adversarial Training', 'Hugging Face', 'W&B'],
+            description: 'A low-latency inline defense system that intercepts direct, indirect, and jailbreak prompt injection attacks before they can hijack an AI agent\'s tool access.',
+            achievements: [
+                'Engineered a generative adversarial training loop powered by a fine-tuned GPT-2 attacker to synthesize novel injection variants, hardening the firewall and reducing its bypass rate from 23.1% to 3.72%',
+                'Trained a compact BERT-base classifier using LoRA adapters for ~20ms latency overhead, achieving 96.24% test accuracy and 99.30% recall parameterized at a strict 1% False Positive Rate boundary'
+            ],
+            links: [
+                { label: 'GitHub', url: 'https://github.com/kunjcr2/llms-from-scratch/tree/main/models/llm-firewall' }
+            ]
         }
+
     ]
 
     return (
