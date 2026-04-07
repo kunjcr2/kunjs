@@ -16,53 +16,40 @@ import BackgroundLayout from './components/BackgroundLayout'
 
 function App() {
     useEffect(() => {
-        // Smooth scroll handling
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute("href");
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
                     const headerOffset = window.innerWidth < 768 ? 60 : 80;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth",
-                    });
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                 }
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.1,
-        };
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            },
+            { root: null, rootMargin: '0px', threshold: 0.08 }
+        );
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("opacity-100", "translate-y-0");
-                    entry.target.classList.remove("opacity-0", "translate-y-8");
-                }
-            });
-        }, observerOptions);
-
-        // Initialize sections with animations
-        document.querySelectorAll("section").forEach((section) => {
-            section.style.transitionDuration = "0.8s";
-            section.style.transitionTimingFunction = "cubic-bezier(0.4, 0, 0.2, 1)";
-            section.classList.add("opacity-0", "translate-y-8");
+        document.querySelectorAll('section').forEach((section) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(section);
         });
 
-        return () => {
-            observer.disconnect();
-        };
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -71,7 +58,7 @@ function App() {
             <BackToTop />
             <Header />
             <Hero />
-            <main className="space-y-24 pb-24">
+            <main>
                 <Models />
                 <Experience />
                 <Education />

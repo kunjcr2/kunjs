@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Check } from 'lucide-react'
+import { ChevronDown, BookMarked } from 'lucide-react'
 
 function Certificates() {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -28,28 +28,29 @@ function Certificates() {
     ]
 
     return (
-        <section id="certificates" className="py-16 bg-[#0a0a0b]">
+        <section id="certificates" className="pt-12 pb-24 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                     className="mb-12"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Credentials</p>
-                    <h2 className="text-3xl font-light text-neutral-100 mb-4">Certificates</h2>
-                    <div className="w-12 h-px bg-neutral-700"></div>
+                    <p className="section-overline text-stone-gray">Credentials</p>
+                    <h2 className="serif-heading text-[3.25rem] text-near-black mb-5">Certificates</h2>
+                    <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto">
                     <div className="flex justify-end mb-6">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-200 text-sm font-medium transition-colors"
+                            className="btn-sand text-xs"
                         >
                             {isExpanded ? 'Show Less' : `Show All (${certificates.length})`}
-                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                         </button>
                     </div>
 
@@ -61,10 +62,12 @@ function Certificates() {
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
                                     exit={{ opacity: 0, height: 0 }}
-                                    className="bg-[#111113] border border-neutral-800/50 rounded-lg p-4 hover:border-neutral-700 transition-colors flex items-start gap-3"
+                                    transition={{ duration: 0.25 }}
                                 >
-                                    <Check className="w-4 h-4 text-neutral-500 mt-0.5 flex-shrink-0" />
-                                    <p className="text-neutral-400 text-sm leading-relaxed">{cert}</p>
+                                    <div className="card-light p-4 hover:border-border-warm transition-all duration-200 flex items-start gap-3">
+                                        <BookMarked className="w-4 h-4 text-terracotta mt-0.5 flex-shrink-0" />
+                                        <p className="text-olive-gray text-sm leading-relaxed">{cert}</p>
+                                    </div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>

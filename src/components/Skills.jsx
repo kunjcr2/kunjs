@@ -50,42 +50,59 @@ function Skills() {
     ]
 
     return (
-        <section id="skills" className="py-16 bg-[#0a0a0b]">
+        <section id="skills" className="py-24 bg-ivory">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Expertise</p>
-                    <h2 className="text-3xl font-light text-neutral-100 mb-4">Skills</h2>
-                    <div className="w-12 h-px bg-neutral-700"></div>
+                    <p className="section-overline text-stone-gray">Expertise</p>
+                    <h2 className="serif-heading text-[3.25rem] text-near-black mb-5">Skills</h2>
+                    <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
                     {skillCategories.map((category, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.05 }}
-                            className="bg-[#111113] border border-neutral-800/50 rounded-lg p-6 hover:border-neutral-700 transition-colors"
+                            transition={{ duration: 0.5, delay: index * 0.08 }}
                         >
-                            <h3 className="text-sm font-medium text-neutral-300 mb-4 pb-3 border-b border-neutral-800/50">
-                                {category.title}
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                                {category.skills.map((skill, i) => (
-                                    <span
-                                        key={i}
-                                        className="px-2.5 py-1 bg-neutral-900 border border-neutral-800/50 text-neutral-500 text-xs font-medium rounded hover:text-neutral-400 hover:border-neutral-700 transition-colors"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
+                            <div
+                                className="rounded-comfort p-6 hover:border-border-warm transition-all duration-300 h-full"
+                                style={{
+                                    backgroundColor: '#faf9f5',
+                                    border: '1px solid #f0eee6',
+                                    boxShadow: 'rgba(0,0,0,0.04) 0px 4px 24px'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.05) 0px 4px 24px'
+                                    e.currentTarget.style.borderColor = '#e8e6dc'
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.boxShadow = 'rgba(0,0,0,0.04) 0px 4px 24px'
+                                    e.currentTarget.style.borderColor = '#f0eee6'
+                                }}
+                            >
+                                <h3 className="font-serif text-[1.2rem] font-medium text-near-black mb-4 pb-3 border-b border-border-warm">
+                                    {category.title}
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {category.skills.map((skill, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-2.5 py-1 bg-warm-sand border border-border-warm text-charcoal-warm text-xs font-medium rounded-sm-round hover:border-ring-warm hover:text-near-black transition-colors cursor-default"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     ))}

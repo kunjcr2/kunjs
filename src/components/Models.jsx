@@ -29,23 +29,20 @@ function Models() {
         }
     ]
 
-    const formatParams = (params) => {
-        return params.toUpperCase()
-    }
-
     return (
-        <section id="models" className="py-16 bg-[#0a0a0b]">
+        <section id="models" className="py-24 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Open Source</p>
-                    <h2 className="text-3xl font-light text-neutral-100 mb-4">Models</h2>
-                    <div className="w-12 h-px bg-neutral-700"></div>
+                    <p className="section-overline text-stone-gray">Open Source</p>
+                    <h2 className="serif-heading text-[3.25rem] text-near-black mb-5">Models</h2>
+                    <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto space-y-4">
@@ -55,23 +52,31 @@ function Models() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group"
+                            transition={{ duration: 0.5, delay: index * 0.08 }}
                         >
-                            <div className="bg-[#111113] border border-neutral-800/50 rounded-lg p-6 hover:border-neutral-700 transition-all duration-300">
+                            <div
+                                className="card-light p-6 hover:border-border-warm transition-all duration-300 group"
+                                style={{ transition: 'border-color 0.2s, box-shadow 0.2s' }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.05) 0px 4px 24px'
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.boxShadow = 'rgba(0,0,0,0.05) 0px 4px 24px'
+                                }}
+                            >
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                     {/* Model Info */}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-3 mb-2">
-                                            <h3 className="text-lg font-medium text-neutral-100 group-hover:text-white transition-colors truncate">
+                                            <h3 className="font-serif text-[1.3rem] font-medium text-near-black group-hover:text-terracotta transition-colors truncate">
                                                 {model.name}
                                             </h3>
-                                            <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-neutral-900 text-neutral-400 text-xs font-medium border border-neutral-800 rounded-full whitespace-nowrap">
-                                                <Cpu size={12} />
-                                                {formatParams(model.parameters)}
+                                            <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-warm-sand text-charcoal-warm text-xs font-medium rounded-generous whitespace-nowrap border border-border-warm">
+                                                <Cpu size={11} />
+                                                {model.parameters}
                                             </span>
                                         </div>
-                                        <p className="text-neutral-500 text-sm leading-relaxed">
+                                        <p className="text-olive-gray text-sm leading-relaxed">
                                             {model.description}
                                         </p>
                                     </div>
@@ -81,11 +86,11 @@ function Models() {
                                         href={model.huggingface}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-700 rounded-lg text-sm text-neutral-400 hover:text-neutral-200 transition-all duration-200 whitespace-nowrap group/link"
+                                        className="btn-sand whitespace-nowrap flex-shrink-0 group/link"
                                     >
-                                        <span className="text-base">🤗</span>
+                                        <span className="text-sm">🤗</span>
                                         Hugging Face
-                                        <ArrowUpRight size={14} className="opacity-50 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
+                                        <ArrowUpRight size={13} className="opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
                                     </a>
                                 </div>
                             </div>
@@ -93,22 +98,22 @@ function Models() {
                     ))}
                 </div>
 
-                {/* View All on HuggingFace */}
+                {/* View All */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="text-center mt-12"
+                    transition={{ delay: 0.4 }}
+                    className="mt-12"
                 >
                     <a
                         href="https://huggingface.co/kunjcr2"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-300 transition-colors"
+                        className="inline-flex items-center gap-2 text-sm text-olive-gray hover:text-terracotta transition-colors font-medium"
                     >
                         View all models on Hugging Face
-                        <ExternalLink size={14} />
+                        <ExternalLink size={13} />
                     </a>
                 </motion.div>
             </div>

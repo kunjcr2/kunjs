@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 10 10 11;
-    --foreground: 245 245 245;
+    --parchment: #f5f4ed;
+    --ivory: #faf9f5;
+    --near-black: #141413;
+    --terracotta: #c96442;
+    --olive-gray: #5e5d59;
   }
 
   html {
@@ -15,38 +20,146 @@
   }
 
   body {
-    @apply bg-[#0a0a0b] text-neutral-100 font-sans antialiased selection:bg-neutral-700/50 selection:text-white;
+    background-color: #f5f4ed;
+    color: #141413;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.60;
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a0b;
+    background: #f5f4ed;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #262626;
-    border-radius: 4px;
+    background: #d1cfc5;
+    border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #404040;
+    background: #b0aea5;
+  }
+
+  ::selection {
+    background-color: rgba(201, 100, 66, 0.15);
+    color: #141413;
   }
 }
 
-@layer utilities {
-  .glass-panel {
-    @apply bg-neutral-900/50 backdrop-blur-xl border border-neutral-800/50 shadow-xl;
+@layer components {
+  /* Section overline label */
+  .section-overline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.60;
+    margin-bottom: 1rem;
   }
 
-  .section-heading {
-    @apply text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-8;
+  /* Serif headline */
+  .serif-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.20;
   }
 
-  .card-professional {
-    @apply bg-[#111113] border border-neutral-800/50 rounded-lg p-6 hover:border-neutral-700/50 transition-colors;
+  /* Whisper shadow */
+  .whisper-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 24px;
+  }
+
+  /* Card — light surface */
+  .card-light {
+    background-color: #faf9f5;
+    border: 1px solid #f0eee6;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 24px;
+  }
+
+  /* Card — dark surface */
+  .card-dark {
+    background-color: #30302e;
+    border: 1px solid #3d3d3a;
+    border-radius: 8px;
+  }
+
+  /* Button — terracotta (primary CTA) */
+  .btn-terracotta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #c96442;
+    color: #faf9f5;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px 0px #c96442, 0px 0px 0px 1px #c96442;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-terracotta:hover {
+    background-color: #b85a3a;
+    box-shadow: 0px 0px 0px 0px #c96442, 0px 0px 0px 2px #c96442;
+  }
+
+  /* Button — warm sand (secondary) */
+  .btn-sand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e8e6dc;
+    color: #4d4c48;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-sand:hover {
+    background-color: #dddbd0;
+    box-shadow: 0px 0px 0px 0px #e8e6dc, 0px 0px 0px 2px #d1cfc5;
+  }
+
+  /* Button — dark charcoal */
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #30302e;
+    color: #faf9f5;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px 0px #30302e, 0px 0px 0px 1px #3d3d3a;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-dark:hover {
+    background-color: #3d3d3a;
   }
 }

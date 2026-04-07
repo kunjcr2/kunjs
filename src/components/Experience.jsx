@@ -47,21 +47,21 @@ function Experience() {
     ]
 
     return (
-        <section id="experience" className="py-16 bg-[#0a0a0b]">
+        <section id="experience" className="py-20 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-                {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium mb-4">Career</p>
-                    <h2 className="text-3xl font-light text-neutral-100 mb-4">Experience</h2>
-                    <div className="w-12 h-px bg-neutral-700"></div>
+                    <p className="section-overline text-stone-gray">Career</p>
+                    <h2 className="serif-heading text-[3.25rem] text-near-black mb-5">Experience</h2>
+                    <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
-                <div className="max-w-3xl mx-auto space-y-6">
+                <div className="max-w-3xl mx-auto space-y-5">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
@@ -69,30 +69,37 @@ function Experience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group"
                         >
-                            <div className="bg-[#111113] border border-neutral-800/50 rounded-lg p-6 hover:border-neutral-700 transition-colors">
+                            <div
+                                className="card-light p-6 hover:border-border-warm transition-all duration-300 group"
+                                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.05) 0px 4px 24px' }}
+                                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'rgba(0,0,0,0.05) 0px 4px 24px' }}
+                            >
                                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                                     <div>
-                                        <h3 className="text-lg font-medium text-neutral-100">{exp.title}</h3>
-                                        <p className="text-neutral-400 text-sm">{exp.company}{exp.location && ` · ${exp.location}`}</p>
+                                        <h3 className="font-serif text-[1.3rem] font-medium text-near-black group-hover:text-terracotta transition-colors">
+                                            {exp.title}
+                                        </h3>
+                                        <p className="text-olive-gray text-sm mt-0.5">
+                                            {exp.company}{exp.location && ` · ${exp.location}`}
+                                        </p>
                                     </div>
-                                    <span className="text-xs text-neutral-500 font-medium tracking-wide">
+                                    <span className="text-xs text-stone-gray font-medium tracking-wide whitespace-nowrap">
                                         {exp.period}
                                     </span>
                                 </div>
 
                                 {exp.description && (
-                                    <p className="text-neutral-500 text-sm leading-relaxed mb-4">
+                                    <p className="text-olive-gray text-sm leading-relaxed mb-4">
                                         {exp.description}
                                     </p>
                                 )}
 
                                 {exp.achievements.length > 0 && (
-                                    <ul className="space-y-1 mb-4">
+                                    <ul className="space-y-2 mb-4">
                                         {exp.achievements.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-neutral-400">
-                                                <span className="text-neutral-600 mt-1">—</span>
+                                            <li key={i} className="flex items-start gap-2.5 text-sm text-charcoal-warm">
+                                                <span className="text-terracotta mt-1 flex-shrink-0">—</span>
                                                 {item}
                                             </li>
                                         ))}
@@ -102,7 +109,7 @@ function Experience() {
                                 {exp.technologies && exp.technologies.length > 0 && (
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {exp.technologies.map((tech, i) => (
-                                            <span key={i} className="px-2 py-1 bg-neutral-900 border border-neutral-800 text-neutral-500 text-xs font-medium rounded">
+                                            <span key={i} className="px-2 py-0.5 bg-warm-sand border border-border-warm text-charcoal-warm text-xs font-medium rounded-sm-round">
                                                 {tech}
                                             </span>
                                         ))}
@@ -114,10 +121,10 @@ function Experience() {
                                         href={exp.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                                        className="inline-flex items-center gap-1 text-xs text-olive-gray hover:text-terracotta transition-colors font-medium"
                                     >
                                         {exp.linkLabel || 'Learn more'}
-                                        <ArrowUpRight size={14} />
+                                        <ArrowUpRight size={12} />
                                     </a>
                                 )}
                             </div>
