@@ -39,7 +39,7 @@ function Hackathons() {
     ]
 
     return (
-        <section id="hackathons" className="pt-12 pb-24 bg-near-black">
+        <section id="hackathons" className="pt-12 pb-24 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Section Header */}
                 <motion.div
@@ -49,16 +49,16 @@ function Hackathons() {
                     transition={{ duration: 0.6 }}
                     className="mb-12"
                 >
-                    <p className="section-overline text-warm-silver/50">Events</p>
-                    <h2 className="serif-heading text-[3.25rem] text-ivory mb-5">Hackathons</h2>
-                    <div className="w-12 h-px bg-dark-surface" />
+                    <p className="section-overline text-stone-gray">Events</p>
+                    <h2 className="serif-heading font-light text-[3.25rem] text-near-black mb-5">Hackathons</h2>
+                    <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto">
                     <div className="flex justify-end mb-6">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="btn-dark text-xs"
+                            className="btn-sand text-xs"
                         >
                             {isExpanded ? 'Show Less' : `Show All (${hackathons.length})`}
                             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -76,20 +76,20 @@ function Hackathons() {
                                     transition={{ duration: 0.3, delay: index * 0.05 }}
                                     layout
                                 >
-                                    <div className="card-dark p-6 hover:border-warm-silver/20 transition-colors duration-300 h-full">
-                                        <h3 className="font-serif text-[1.25rem] font-medium text-ivory mb-4">
+                                    <div className="card-light p-6 hover:border-border-warm transition-colors duration-300 h-full">
+                                        <h3 className="font-serif font-light text-[1.25rem] text-near-black mb-4">
                                             {hackathon.name}
                                         </h3>
                                         <div className="space-y-2.5 text-sm">
-                                            <div className="flex items-center gap-2.5 text-warm-silver/60">
+                                            <div className="flex items-center gap-2.5 text-olive-gray">
                                                 <MapPin size={13} className="text-stone-gray flex-shrink-0" />
                                                 {hackathon.where}
                                             </div>
-                                            <div className="flex items-center gap-2.5 text-warm-silver/60">
+                                            <div className="flex items-center gap-2.5 text-olive-gray">
                                                 <Calendar size={13} className="text-stone-gray flex-shrink-0" />
                                                 {hackathon.when}
                                             </div>
-                                            <div className="flex items-center gap-2.5 pt-2 border-t border-dark-warm/30">
+                                            <div className="flex items-center gap-2.5 pt-2 border-t border-border-cream">
                                                 <Code2 size={13} className="text-terracotta flex-shrink-0" />
                                                 <span className="text-coral font-medium">{hackathon.project}</span>
                                             </div>

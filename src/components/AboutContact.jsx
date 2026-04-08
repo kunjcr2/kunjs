@@ -18,7 +18,7 @@ function AboutContact() {
     }
 
     return (
-        <section id="contact" className="pt-12 pb-24 bg-near-black">
+        <section id="contact" className="pt-12 pb-24 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -29,15 +29,15 @@ function AboutContact() {
                 >
                     {/* Section Header */}
                     <div className="mb-12">
-                        <p className="section-overline text-warm-silver/50">Connect</p>
-                        <h2 className="serif-heading text-[3.25rem] text-ivory mb-5">Get in Touch</h2>
-                        <div className="w-12 h-px bg-dark-surface" />
+                        <p className="section-overline text-stone-gray">Connect</p>
+                        <h2 className="serif-heading text-[3.25rem] font-light text-near-black mb-5">Get in Touch</h2>
+                        <div className="w-12 h-px bg-border-warm" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Left — Contact Info */}
                         <div>
-                            <p className="text-warm-silver/70 leading-relaxed mb-8 text-body-lg">
+                            <p className="text-olive-gray leading-relaxed mb-8 text-body-lg">
                                 Have an interesting project? Want to discuss LLM architectures?
                                 My inbox is always open.
                             </p>
@@ -48,7 +48,7 @@ function AboutContact() {
                                     className="flex items-center gap-4 group"
                                 >
                                     <div className="w-11 h-11 rounded-comfort"
-                                         style={{ backgroundColor: '#1e1e1c', border: '1px solid #3d3d3a' }}
+                                        style={{ backgroundColor: '#faf9f5', border: '1px solid #e8e6dc' }}
                                     >
                                         <div className="w-full h-full flex items-center justify-center group-hover:bg-terracotta/10 rounded-comfort transition-colors">
                                             <Mail size={17} className="text-terracotta" />
@@ -56,36 +56,36 @@ function AboutContact() {
                                     </div>
                                     <div>
                                         <div className="text-xs text-stone-gray mb-0.5 uppercase tracking-wider">Email</div>
-                                        <div className="text-sm text-warm-silver group-hover:text-coral transition-colors">kunjcr2@gmail.com</div>
+                                        <div className="text-sm text-near-black group-hover:text-terracotta transition-colors">kunjcr2@gmail.com</div>
                                     </div>
                                     <ArrowRight size={14} className="ml-auto text-stone-gray opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                                 </a>
 
                                 <div className="flex items-center gap-4">
                                     <div className="w-11 h-11 rounded-comfort flex items-center justify-center"
-                                         style={{ backgroundColor: '#1e1e1c', border: '1px solid #3d3d3a' }}
+                                        style={{ backgroundColor: '#faf9f5', border: '1px solid #e8e6dc' }}
                                     >
                                         <Clock size={17} className="text-stone-gray" />
                                     </div>
                                     <div>
                                         <div className="text-xs text-stone-gray mb-0.5 uppercase tracking-wider">Response Time</div>
-                                        <div className="text-sm text-warm-silver">Usually within 24 hours</div>
+                                        <div className="text-sm text-near-black">Usually within 24 hours</div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Social links */}
-                            <div className="mt-10 pt-8 border-t border-dark-warm/30">
+                            <div className="mt-10 pt-8 border-t border-border-cream">
                                 <p className="text-xs text-stone-gray uppercase tracking-wider mb-4">Find me on</p>
                                 <div className="flex items-center gap-4">
                                     <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer"
-                                       className="flex items-center gap-2 text-stone-gray hover:text-warm-silver transition-colors text-sm">
+                                        className="flex items-center gap-2 text-stone-gray hover:text-terracotta transition-colors text-sm">
                                         <Github size={16} />
                                         GitHub
                                     </a>
-                                    <span className="text-dark-warm">·</span>
+                                    <span className="text-stone-gray">·</span>
                                     <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer"
-                                       className="flex items-center gap-2 text-stone-gray hover:text-warm-silver transition-colors text-sm">
+                                        className="flex items-center gap-2 text-stone-gray hover:text-terracotta transition-colors text-sm">
                                         <Linkedin size={16} />
                                         LinkedIn
                                     </a>
@@ -96,7 +96,7 @@ function AboutContact() {
                         {/* Right — Custom Contact Form */}
                         <div
                             className="rounded-generous p-6"
-                            style={{ backgroundColor: '#1e1e1c', border: '1px solid #3d3d3a' }}
+                            style={{ backgroundColor: '#faf9f5', border: '1px solid #e8e6dc' }}
                         >
                             {submitted ? (
                                 <motion.div
@@ -107,18 +107,18 @@ function AboutContact() {
                                     <div className="w-12 h-12 rounded-full bg-terracotta/15 flex items-center justify-center mb-4">
                                         <Send size={20} className="text-terracotta" />
                                     </div>
-                                    <h3 className="font-serif text-[1.3rem] font-medium text-ivory mb-2">Message Sent</h3>
-                                    <p className="text-warm-silver/60 text-sm">I'll get back to you within 24 hours.</p>
+                                    <h3 className="font-serif text-[1.3rem] font-light text-near-black mb-2">Message Sent</h3>
+                                    <p className="text-olive-gray text-sm">I'll get back to you within 24 hours.</p>
                                     <button
                                         onClick={() => { setSubmitted(false); setFormState({ name: '', email: '', subject: '', message: '' }) }}
-                                        className="mt-6 text-xs text-stone-gray hover:text-warm-silver transition-colors"
+                                        className="mt-6 text-xs text-stone-gray hover:text-terracotta transition-colors"
                                     >
                                         Send another
                                     </button>
                                 </motion.div>
                             ) : (
                                 <>
-                                    <h3 className="font-serif text-[1.1rem] font-medium text-ivory mb-5">Send a Message</h3>
+                                    <h3 className="font-serif text-[1.1rem] font-light text-near-black mb-5">Send a Message</h3>
 
                                     <form onSubmit={handleSubmit} className="space-y-4">
                                         <div className="grid grid-cols-2 gap-3">
@@ -132,14 +132,14 @@ function AboutContact() {
                                                     onChange={handleChange}
                                                     required
                                                     placeholder="Your name"
-                                                    className="w-full px-3 py-2.5 text-sm text-warm-silver placeholder-stone-gray rounded-comfort outline-none transition-all"
+                                                    className="w-full px-3 py-2.5 text-sm text-near-black placeholder-stone-gray/70 rounded-comfort outline-none transition-all"
                                                     style={{
-                                                        backgroundColor: '#141413',
-                                                        border: '1px solid #3d3d3a',
+                                                        backgroundColor: '#ffffff',
+                                                        border: '1px solid #e8e6dc',
                                                         caretColor: '#c96442',
                                                     }}
                                                     onFocus={(e) => { e.target.style.borderColor = '#c96442'; e.target.style.boxShadow = '0 0 0 2px rgba(201,100,66,0.12)' }}
-                                                    onBlur={(e) => { e.target.style.borderColor = '#3d3d3a'; e.target.style.boxShadow = 'none' }}
+                                                    onBlur={(e) => { e.target.style.borderColor = '#e8e6dc'; e.target.style.boxShadow = 'none' }}
                                                 />
                                             </div>
                                             <div>
@@ -152,14 +152,14 @@ function AboutContact() {
                                                     onChange={handleChange}
                                                     required
                                                     placeholder="you@email.com"
-                                                    className="w-full px-3 py-2.5 text-sm text-warm-silver placeholder-stone-gray rounded-comfort outline-none transition-all"
+                                                    className="w-full px-3 py-2.5 text-sm text-near-black placeholder-stone-gray/70 rounded-comfort outline-none transition-all"
                                                     style={{
-                                                        backgroundColor: '#141413',
-                                                        border: '1px solid #3d3d3a',
+                                                        backgroundColor: '#ffffff',
+                                                        border: '1px solid #e8e6dc',
                                                         caretColor: '#c96442',
                                                     }}
                                                     onFocus={(e) => { e.target.style.borderColor = '#c96442'; e.target.style.boxShadow = '0 0 0 2px rgba(201,100,66,0.12)' }}
-                                                    onBlur={(e) => { e.target.style.borderColor = '#3d3d3a'; e.target.style.boxShadow = 'none' }}
+                                                    onBlur={(e) => { e.target.style.borderColor = '#e8e6dc'; e.target.style.boxShadow = 'none' }}
                                                 />
                                             </div>
                                         </div>
@@ -174,14 +174,14 @@ function AboutContact() {
                                                 onChange={handleChange}
                                                 required
                                                 placeholder="What's this about?"
-                                                className="w-full px-3 py-2.5 text-sm text-warm-silver placeholder-stone-gray rounded-comfort outline-none transition-all"
+                                                className="w-full px-3 py-2.5 text-sm text-near-black placeholder-stone-gray/70 rounded-comfort outline-none transition-all"
                                                 style={{
-                                                    backgroundColor: '#141413',
-                                                    border: '1px solid #3d3d3a',
+                                                    backgroundColor: '#ffffff',
+                                                    border: '1px solid #e8e6dc',
                                                     caretColor: '#c96442',
                                                 }}
                                                 onFocus={(e) => { e.target.style.borderColor = '#c96442'; e.target.style.boxShadow = '0 0 0 2px rgba(201,100,66,0.12)' }}
-                                                onBlur={(e) => { e.target.style.borderColor = '#3d3d3a'; e.target.style.boxShadow = 'none' }}
+                                                onBlur={(e) => { e.target.style.borderColor = '#e8e6dc'; e.target.style.boxShadow = 'none' }}
                                             />
                                         </div>
 
@@ -195,14 +195,14 @@ function AboutContact() {
                                                 required
                                                 rows={5}
                                                 placeholder="Tell me about your project..."
-                                                className="w-full px-3 py-2.5 text-sm text-warm-silver placeholder-stone-gray rounded-comfort outline-none transition-all resize-none"
+                                                className="w-full px-3 py-2.5 text-sm text-near-black placeholder-stone-gray/70 rounded-comfort outline-none transition-all resize-none"
                                                 style={{
-                                                    backgroundColor: '#141413',
-                                                    border: '1px solid #3d3d3a',
+                                                    backgroundColor: '#ffffff',
+                                                    border: '1px solid #e8e6dc',
                                                     caretColor: '#c96442',
                                                 }}
                                                 onFocus={(e) => { e.target.style.borderColor = '#c96442'; e.target.style.boxShadow = '0 0 0 2px rgba(201,100,66,0.12)' }}
-                                                onBlur={(e) => { e.target.style.borderColor = '#3d3d3a'; e.target.style.boxShadow = 'none' }}
+                                                onBlur={(e) => { e.target.style.borderColor = '#e8e6dc'; e.target.style.boxShadow = 'none' }}
                                             />
                                         </div>
 
@@ -216,7 +216,7 @@ function AboutContact() {
                                         </button>
                                     </form>
 
-                                    <p className="text-xs text-dark-warm mt-3">
+                                    <p className="text-xs text-stone-gray mt-3">
                                         Backend coming soon — form UI ready for integration.
                                     </p>
                                 </>

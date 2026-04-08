@@ -50,7 +50,7 @@ function Skills() {
     ]
 
     return (
-        <section id="skills" className="py-24 bg-ivory">
+        <section id="skills" className="py-24 bg-parchment">
             <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Section Header */}
                 <motion.div

@@ -88,7 +88,7 @@ function Models() {
                                         rel="noopener noreferrer"
                                         className="btn-sand whitespace-nowrap flex-shrink-0 group/link"
                                     >
-                                        <span className="text-sm">🤗</span>
+                                        {/* <span className="text-sm">🤗</span> */}
                                         Hugging Face
                                         <ArrowUpRight size={13} className="opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
                                     </a>

@@ -5,7 +5,6 @@ function Projects() {
     const projects = [
         {
             title: 'Kanting — Video RAG System',
-            image: '/assets/kanting_thumb.png',
             tags: ['Semantic Search', 'Whisper ASR', 'Claude AI'],
             description: 'Built a video RAG system that indexes YouTube videos using Whisper for transcription, stores embeddings with Sentence-Transformers, and enables semantic search with timestamped clip extraction powered by Claude.',
             links: [
@@ -14,7 +13,6 @@ function Projects() {
         },
         {
             title: 'theHelper — AI Research Assistant',
-            image: '/assets/thehelper-thumb.jpg',
             tags: ['FastAPI', 'FAISS', 'LangChain', 'Cross-Encoder Reranking', 'OpenAI', 'GitHub Actions'],
             description: 'Production-grade PDF RAG service backed by a persistent local FAISS vector index, LangChain recursive chunking, and cross-encoder reranking — returns structured source references alongside every generated answer.',
             achievements: [
@@ -27,7 +25,6 @@ function Projects() {
         },
         {
             title: 'LLM Firewall for Agentic Tool-Calling',
-            image: '/assets/llm-firewall.png',
             tags: ['BERT', 'GPT-2', 'LoRA', 'Prompt Injection', 'Adversarial Training', 'W&B'],
             description: 'A low-latency inline defense system that intercepts direct, indirect, and jailbreak prompt injection attacks before they can hijack an AI agent\'s tool access.',
             achievements: [
@@ -56,76 +53,64 @@ function Projects() {
                     <div className="w-12 h-px bg-border-warm" />
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+                <div className="max-w-4xl mx-auto space-y-4">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                            transition={{ duration: 0.5, delay: index * 0.08 }}
                         >
                             <div
-                                className="card-light overflow-hidden flex flex-col h-full hover:border-border-warm transition-all duration-300 group"
-                                style={{ borderRadius: '8px' }}
+                                className="card-light p-6 hover:border-border-warm transition-all duration-300 group"
+                                style={{ transition: 'border-color 0.2s, box-shadow 0.2s' }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.07) 0px 8px 32px'
+                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px #e8e6dc, 0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.05) 0px 4px 24px'
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.boxShadow = 'rgba(0,0,0,0.05) 0px 4px 24px'
                                 }}
                             >
-                                {/* Image */}
-                                <div className="relative h-44 overflow-hidden bg-warm-sand border-b border-border-cream">
-                                    <img
-                                        src={project.image}
-                                        alt={`${project.title} thumbnail`}
-                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                                        onError={(e) => { e.target.style.display = 'none' }}
-                                    />
-                                </div>
-
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <h3 className="font-serif text-[1.2rem] font-medium text-near-black mb-3 group-hover:text-terracotta transition-colors leading-snug">
-                                        {project.title}
-                                    </h3>
-
-                                    <div className="flex flex-wrap gap-1.5 mb-4">
-                                        {project.tags.map((tag, i) => (
-                                            <span key={i} className="px-2 py-0.5 bg-warm-sand border border-border-warm text-charcoal-warm text-xs font-medium rounded-sm-round">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <p className="text-olive-gray leading-relaxed text-sm mb-4">
-                                        {project.description}
-                                    </p>
-
-                                    {project.achievements && project.achievements.length > 0 && (
-                                        <ul className="space-y-1.5 mb-4 flex-grow">
-                                            {project.achievements.map((item, i) => (
-                                                <li key={i} className="flex items-start gap-2 text-sm text-charcoal-warm">
-                                                    <span className="text-terracotta mt-1 flex-shrink-0">—</span>
-                                                    {item}
-                                                </li>
+                                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <h3 className="font-serif text-[1.3rem] font-medium text-near-black group-hover:text-terracotta transition-colors truncate">
+                                                {project.title}
+                                            </h3>
+                                        </div>
+                                        <div className="flex flex-wrap gap-1.5 mb-3">
+                                            {project.tags.map((tag, i) => (
+                                                <span key={i} className="px-2 py-0.5 bg-warm-sand border border-border-warm text-charcoal-warm text-xs font-medium rounded-sm-round">
+                                                    {tag}
+                                                </span>
                                             ))}
-                                        </ul>
-                                    )}
-
-                                    {!project.achievements && <div className="flex-grow" />}
-
-                                    <div className="flex flex-wrap gap-4 pt-4 border-t border-border-cream">
+                                        </div>
+                                        <p className="text-olive-gray text-sm leading-relaxed mb-3">
+                                            {project.description}
+                                        </p>
+                                        {project.achievements && project.achievements.length > 0 && (
+                                            <ul className="space-y-1.5 mt-3">
+                                                {project.achievements.map((item, i) => (
+                                                    <li key={i} className="flex items-start gap-2 text-sm text-charcoal-warm">
+                                                        <span className="text-terracotta mt-1 flex-shrink-0">—</span>
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col gap-2 flex-shrink-0">
                                         {project.links.map((link, i) => (
                                             <a
                                                 key={i}
                                                 href={link.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-1.5 text-olive-gray hover:text-terracotta text-sm font-medium transition-colors"
+                                                className="btn-sand whitespace-nowrap flex-shrink-0 group/link justify-center"
                                             >
                                                 {link.label}
-                                                <ArrowUpRight size={13} />
+                                                <ArrowUpRight size={13} className="opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
                                             </a>
                                         ))}
                                     </div>
